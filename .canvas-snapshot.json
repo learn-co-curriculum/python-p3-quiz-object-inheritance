@@ -89,7 +89,7 @@
       "position": null,
       "question_name": "Object Inheritance: Fundamentals",
       "question_type": "multiple_choice_question",
-      "question_text": "<p>Object inheritance means that an object can use all of the attributes and\nbehaviors (i.e. all of the methods) of the parent/super class.</p>",
+      "question_text": "<p>Object inheritance means that an object can access all private and public\nattributes and methods of the parent/super class.</p>",
       "points_possible": 1.0,
       "correct_comments": "",
       "incorrect_comments": "",
@@ -103,16 +103,16 @@
           "text": "",
           "html": "<p>True</p>",
           "comments": "",
-          "comments_html": "<p>Correct! Objects (or children) that inherit from a parent class have access to\nthe parent's attributes, such as instance variables, and methods.</p>",
-          "weight": 100.0
+          "comments_html": "<p>Incorrect! Objects (or children) inherit the parent's attributes, such as\ninstance variables, and methods. An object can directly access public\ninherited attributes and methods. Private inherited attributes must be\naccessed through public inherited methods.</p>",
+          "weight": 0.0
         },
         {
           "id": 8813,
           "text": "",
           "html": "<p>False</p>",
           "comments": "",
-          "comments_html": "<p>Be sure to study the source/s for this question. You'll get it next time.</p>",
-          "weight": 0.0
+          "comments_html": "<p>Correct! Objects (or children) inherit the parent's attributes, such as\ninstance variables, and methods. An object can directly access public\ninherited attributes and methods. Private inherited attributes must be\naccessed through public inherited methods.</p>",
+          "weight": 100.0
         },
         {
           "id": 2663,
@@ -156,9 +156,9 @@
           "weight": 100.0
         },
         {
-          "id": 5279,
+          "id": 2774,
           "text": "",
-          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Laptop</span><span class=\"p\">:</span>\n  <span class=\"k\">pass</span>\n</code></pre></div>",
+          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Laptop</span> <span class=\"n\">superclass</span> <span class=\"n\">Computer</span><span class=\"p\">:</span>\n  <span class=\"k\">pass</span>\n</code></pre></div>",
           "comments": "",
           "comments_html": "<p>This code declares the Laptop class but it doesn't cause the Laptop class to\ninherit from Computer. How can we make that happen? What's missing?</p>",
           "weight": 0.0
@@ -195,7 +195,7 @@
       "position": null,
       "question_name": "Object Inheritance: Fundamentals",
       "question_type": "multiple_choice_question",
-      "question_text": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Computer</span><span class=\"p\">:</span>\n\n  <span class=\"k\">def</span> <span class=\"nf\">__init__</span> <span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">name</span><span class=\"p\">,</span> <span class=\"n\">ram</span><span class=\"p\">,</span> <span class=\"n\">hd</span><span class=\"p\">):</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">name</span> <span class=\"o\">=</span> <span class=\"n\">name</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">ram_amount</span> <span class=\"o\">=</span> <span class=\"n\">ram</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">hd_size</span> <span class=\"o\">=</span> <span class=\"n\">hd</span>\n\n  <span class=\"k\">def</span> <span class=\"nf\">calculate</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">return</span> <span class=\"s\">\"Crunching numbers!\"</span>\n</code></pre></div>\n<p>To overwrite an inherited method from <code>Computer</code>, which syntax should be used?</p>",
+      "question_text": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Computer</span><span class=\"p\">:</span>\n\n  <span class=\"k\">def</span> <span class=\"nf\">__init__</span> <span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">name</span><span class=\"p\">,</span> <span class=\"n\">ram</span><span class=\"p\">,</span> <span class=\"n\">hd</span><span class=\"p\">):</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">name</span> <span class=\"o\">=</span> <span class=\"n\">name</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">ram_amount</span> <span class=\"o\">=</span> <span class=\"n\">ram</span>\n    <span class=\"bp\">self</span><span class=\"p\">.</span><span class=\"n\">hd_size</span> <span class=\"o\">=</span> <span class=\"n\">hd</span>\n\n  <span class=\"k\">def</span> <span class=\"nf\">calculate</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">return</span> <span class=\"s\">\"Crunching numbers!\"</span>\n</code></pre></div>\n<p>To overwrite the inherited method <code>calculate</code> from <code>Computer</code>, which syntax\nshould be used?</p>",
       "points_possible": 1.0,
       "correct_comments": "",
       "incorrect_comments": "",
@@ -217,7 +217,15 @@
           "text": "",
           "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Laptop</span><span class=\"p\">:</span>\n  <span class=\"k\">def</span> <span class=\"nf\">calculate</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">return</span> <span class=\"s\">\"Processing mathematics!\"</span>\n</code></pre></div>",
           "comments": "",
-          "comments_html": "<p>Laptop is being declared, but it isn't inheriting from a parent class. How do we\nfix this?</p>",
+          "comments_html": "<p>Laptop is being declared, but it isn't inheriting from a parent class. How do\nwe fix this?</p>",
+          "weight": 0.0
+        },
+        {
+          "id": 1675,
+          "text": "",
+          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Laptop</span><span class=\"p\">(</span><span class=\"n\">Computer</span><span class=\"p\">):</span>\n  <span class=\"k\">def</span> <span class=\"nf\">calculate</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">num</span><span class=\"p\">):</span>\n    <span class=\"k\">return</span> <span class=\"s\">\"Processing mathematics\"</span>\n</code></pre></div>",
+          "comments": "",
+          "comments_html": "<p>Incorrect. The subclass method must have the same signature as the superclass,\ni.e. the same name and parameter list.</p>",
           "weight": 0.0
         },
         {
@@ -293,7 +301,7 @@
       "position": null,
       "question_name": "Object Inheritance: Super",
       "question_type": "multiple_choice_question",
-      "question_text": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Furniture</span><span class=\"p\">:</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"Your furniture is being built\"</span><span class=\"p\">)</span>\n</code></pre></div>\n<p>We have a parent class <code>Furniture</code> and a subclass <code>Table</code>. In the <code>Table</code> class,\nwe want to be able to call <code>build()</code> and have it print \"You have chosen a table\"\nfollowed by \"Your furniture is being built\". Which code block achieves this?\nChoose the <strong>best</strong> option.</p>",
+      "question_text": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Furniture</span><span class=\"p\">:</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"Your furniture is being built\"</span><span class=\"p\">)</span>\n</code></pre></div>\n<p>We have a parent class <code>Furniture</code> and a subclass <code>Table</code>. In the <code>Table</code> class,\nwe want to be able to call <code>build()</code> and have it print \"You have chosen a table\"\nfollowed by \"Your furniture is being built\". Which code block achieves this?\nChoose the <strong>best</strong> option in terms of using inheritance to avoid code\nduplication while achieving the desired functionality.</p>",
       "points_possible": 1.0,
       "correct_comments": "",
       "incorrect_comments": "",
@@ -307,15 +315,15 @@
           "text": "",
           "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Table</span><span class=\"p\">(</span><span class=\"n\">Furniture</span><span class=\"p\">):</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"You have chosen a table\"</span><span class=\"p\">)</span>\n    <span class=\"nb\">super</span><span class=\"p\">().</span><span class=\"n\">build</span><span class=\"p\">()</span>\n</code></pre></div>",
           "comments": "",
-          "comments_html": "<p>Yes! If <code>Table</code> inherits from <code>Furniture</code> we can use the <code>Furniture\nbuild()</code>method by calling <code>super().build()</code> after running whatever extra\nfunctionality we need to run first.</p>",
+          "comments_html": "<p>Yes! If <code>Table</code> inherits from <code>Furniture</code> we can use the\n<code>Furniture build()</code>method by calling <code>super().build()</code> after running whatever\nextra functionality we need to run first.</p>",
           "weight": 100.0
         },
         {
-          "id": 5470,
+          "id": 3101,
           "text": "",
-          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Table</span><span class=\"p\">(</span><span class=\"n\">Furniture</span><span class=\"p\">):</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span> \n    <span class=\"nb\">super</span><span class=\"p\">().</span><span class=\"n\">build</span><span class=\"p\">()</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"You have chosen a table\"</span><span class=\"p\">)</span>\n</code></pre></div>",
+          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Table</span><span class=\"p\">(</span><span class=\"n\">Furniture</span><span class=\"p\">):</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"nb\">super</span><span class=\"p\">().</span><span class=\"n\">build</span><span class=\"p\">()</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"You have chosen a table\"</span><span class=\"p\">)</span>\n</code></pre></div>",
           "comments": "",
-          "comments_html": "<p>Almost. In which order will the strings print? How can we make them print in the\ncorrect order?</p>",
+          "comments_html": "<p>Almost. In which order will the strings print? How can we make them print in\nthe correct order?</p>",
           "weight": 0.0
         },
         {
@@ -327,11 +335,11 @@
           "weight": 0.0
         },
         {
-          "id": 7275,
+          "id": 7884,
           "text": "",
-          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Table</span><span class=\"p\">(</span><span class=\"n\">Furniture</span><span class=\"p\">):</span> \n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"You have chosen a table\"</span><span class=\"p\">)</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"Your furniture is being built\"</span><span class=\"p\">)</span>\n</code></pre></div>",
+          "html": "<div class=\"highlight\"><pre class=\"highlight python\"><code><span class=\"k\">class</span> <span class=\"nc\">Table</span><span class=\"p\">(</span><span class=\"n\">Furniture</span><span class=\"p\">):</span>\n  <span class=\"k\">def</span> <span class=\"nf\">build</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"You have chosen a table\"</span><span class=\"p\">)</span>\n    <span class=\"k\">print</span><span class=\"p\">(</span><span class=\"s\">\"Your furniture is being built\"</span><span class=\"p\">)</span>\n</code></pre></div>",
           "comments": "",
-          "comments_html": "<p>Not quite. While this will achieve what we want, we have repeated ourselves and\nwe've also overwritten the parent's method. What can we do instead to DRY up our\ncode and ensure the strings print in the correct order?</p>",
+          "comments_html": "<p>Not quite. While this will achieve what we want, we have repeated ourselves\nand we've also overwritten the parent's method. What can we do instead to DRY\nup our code and ensure the strings print in the correct order?</p>",
           "weight": 0.0
         },
         {
